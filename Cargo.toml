@@ -4,6 +4,8 @@ version = "0.1.0"
 edition = "2021"
 license = "MIT"
 description = "A small collection of ai algorithms to perform some simple prediction on structured data."
+authors = ["Enrycoop <enricocoppolecchia@outlook.com>"]
+repository = "https://github.com/enrycoop/toyai.git"
 
 [dependencies]
 
