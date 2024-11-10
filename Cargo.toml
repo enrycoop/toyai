@@ -1,0 +1,15 @@
+[package]
+name = "toyai"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+description = "A small collection of ai algorithms to perform some simple prediction on structured data."
+
+[dependencies]
+
+
+[profile.dev]
+opt-level = 0
+
+[profile.release]
+opt-level = 3
