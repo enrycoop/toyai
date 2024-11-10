@@ -10,13 +10,6 @@
 //! - `weights`: weights after fitting
 //! - `errors`: number of misclassifications in every epoch
 //! 
-//! # Example
-//! ```
-//! let mut model = perceptron::Perceptron::new(0.1, 10);
-//! 
-//! model.fit(&(dataset.x), &(dataset.y))
-//!      .expect("Error during learning model.");
-//! ```
 use std::error::Error;
 
 pub struct Perceptron {
