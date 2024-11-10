@@ -56,6 +56,8 @@ pub use crate::ml::{dataset, perceptron};
 
 #[cfg(test)]
 mod perceptron_tests {
+    use perceptron::Perceptron;
+
     use super::*;
 
     #[test]
@@ -63,7 +65,7 @@ mod perceptron_tests {
         let file_path = "data/iris.data";
 
         let dataset = dataset::Dataset::from(&file_path);
-        let mut model = perceptron::Perceptron::new(0.1, 10);
+        let mut model = Perceptron::new(0.1, 10);
 
         model
             .fit(&(dataset.x), &(dataset.y))
