@@ -93,15 +93,11 @@ impl Perceptron {
         self.errors = Vec::new();
 
         for epoch in 0..self.n_iter {
-            // Epoche
             print!("Epoch: {epoch}");
             let mut errors: u32 = 0;
             for i_sample in 0..x.len() {
-                // Calcolo l'aggiornamento con la distanza tra la classe
-                // e il valore predetto per un certo coeff.
                 let update = self.eta * (y[i_sample] - self.predict(&x[i_sample]));
 
-                // aggiorno i pesi in weights
                 for i_weight in 1..self.weights.len() {
                     self.weights[i_weight] += update * x[i_sample][i_weight - 1];
                 }
