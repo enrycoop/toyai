@@ -57,6 +57,8 @@ pub use crate::ml::{dataset, perceptron};
 
 #[cfg(test)]
 mod perceptron_tests {
+    use dataset::Dataset;
+
     use super::*;
 
     #[test]
@@ -70,5 +72,10 @@ mod perceptron_tests {
             .fit(&(dataset.x), &(dataset.y))
             .expect("Error during learning model.");
         assert!(model.errors[9] == 0);
+    }
+
+    #[test]
+    fn test_dataset_read_file() {
+        Dataset::read_file("data/iris.data");
     }
 }

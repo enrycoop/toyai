@@ -3,13 +3,37 @@
 
 use std::fs;
 
-
 pub struct Dataset {
     pub x: Vec<Vec<f64>>,
     pub y: Vec<f64>,
 }
 
 impl Dataset {
+
+    pub fn read_file(file_path: &str) -> Vec<Vec<String>> {
+        let contents = fs::read_to_string(file_path)
+            .expect(format!("Impossible to read file: {file_path}").as_str());        
+
+        let mut tokens: Vec<Vec<String>> = Vec::new();
+        for line in contents.lines() {
+            let mut row: Vec<String> = Vec::new();
+            for token in line.split(",") {
+                row.push(String::from(token));
+                print!("{} ", token);
+            }
+            tokens.push(row);
+            println!();
+        }
+        tokens
+    }
+
+    pub fn build(file_path: &str, categorical: Vec<bool>){
+        let tokens = Dataset::read_file(file_path);
+        for line in tokens {
+           
+        }
+    }
+
     pub fn from(file_path: &str) -> Self {
         let contents = fs::read_to_string(file_path)
             .expect(format!("Impossibile leggere il file: {file_path}").as_str());
